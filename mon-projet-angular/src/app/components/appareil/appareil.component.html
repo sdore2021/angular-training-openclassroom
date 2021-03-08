@@ -1,0 +1,19 @@
+<li class="list-group-item">
+  <a [routerLink]="[id]">detail</a>
+  <h4>Appreil : {{ appareilName }} - Status: {{ getStatus() }}</h4>
+  <input type="text" class="form-control" [(ngModel)]="appareilStatus" />
+  <button
+    class="btn btn-success"
+    *ngIf="appareilStatus == 'eteint'"
+    (click)="onSwitchOn()"
+  >
+    switch on
+  </button>
+  <button
+    class="btn btn-danger"
+    *ngIf="appareilStatus == 'allumer'"
+    (click)="onSwitchOff()"
+  >
+    switch off
+  </button>
+</li>
